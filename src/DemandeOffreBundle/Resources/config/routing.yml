@@ -1,0 +1,58 @@
+demande_offre_homepage:
+    path:     /GestionDO
+    defaults: { _controller: DemandeOffreBundle:Default:index }
+Produits_antisalissure:
+    path:     /P_a
+    defaults: { _controller: DemandeOffreBundle:Default:index }
+
+Offre:
+    path:     /GestionDO/Offre
+    defaults: { _controller: DemandeOffreBundle:Default:index }
+
+Demande:
+    path:     /GestionDO/Demande
+    defaults: { _controller: DemandeOffreBundle:Default:index }
+
+
+affichage_la_liste_d_annonce:
+    path:     /prestataire/affichage
+    defaults: { _controller: DemandeOffreBundle:Default:affichage }
+
+ajout_annonce:
+    path:     /prestataire/home/ajout
+    defaults: { _controller: DemandeOffreBundle:Default:ajout }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Batiment:
+    path:     /Batiment
+    defaults: { _controller: DemandeOffreBundle:Default:index }
+
+Industries:
+    path:     /Indus
+    defaults: { _controller: DemandeOffreBundle:Default:index }
+
+Demenagemnt:
+    path:     /Dememangement
+    defaults: { _controller: DemandeOffreBundle:Default:index }
+
+SmartHome:
+    path:     /SH
+    defaults: { _controller: DemandeOffreBundle:Default:index }
+
+Coursier:
+    path:     /Cr
+    defaults: { _controller: DemandeOffreBundle:Default:index }

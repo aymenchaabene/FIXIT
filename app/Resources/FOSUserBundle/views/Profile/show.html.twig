@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+{% block header %}
+        <div class="banner_w3lspvt">
+            <div class="nav_w3ls pt-4 pb-3 text-center">
+                <nav>
+                    <label for="drop" class="toggle">Menu</label>
+                    <input type="checkbox" id="drop"/>
+                    <ul class="menu">
+                        <li><a href="" class="active">Accueil</a></li>
+                        <li><a href="{{ path('fos_user_security_logout') }}" class="active">Deconnexion</a></li>
+                    </ul>
+                </nav>
+            </div>
+    {% block fos_user_content %}
+        {% include "@FOSUser/Profile/show_content.html.twig" %}
+    {% endblock fos_user_content %}
+        </div>
+    {% endblock %}

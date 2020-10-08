@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+            {% block body %}
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+
+                        <li class="breadcrumb-item">
+                            <a href="{{ path('affichage_la_liste_d_annonce') }}">Annonces</a>
+                        </li>
+
+                    </ol>
+                </nav>
+
+                <section class="trav-grids py-5" id="desti">
+                    <div class="container py-xl-5 py-lg-3">
+                        <div class="title-bg text-center py-5 mb-5">
+                            <h3 class="tittle text-wh let mb-2 pt-lg-3">Votre liste d'annonces</h3>
+                        </div>
+
+
+                        <div class="row">
+                            {% for off in offres | reverse %}
+                                <div class="col-lg-6 mt-4">
+                                    <div class="grids-tem-one">
+                                        <div class="row">
+                                            <div class="col-5 grids-img-left">
+                                                <img src="http://localhost/fixitF/public/uploads/Photos/{{off.photo}}" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="col-7 right-cont">
+
+                                                <h6><font color="black"><font color="#4682b4"><big>Type: </big></font><i>{{ off.budget }}</i></font></h6>
+                                                <h6><font color="black"><font color="#4682b4"><big>Ville: </big></font><i>{{ off.titre }}</i></font></h6>
+                                                <h6><font color="black"><font color="#4682b4"><big>Adresse: </big></font><i>{{ off.description }}</i></font></h6>
+                                                <h6><font color="black"><font color="#4682b4"><big>Date début: </big></font><i>{{ off.service.nom }}</i></font></h6>
+
+                                               </p>
+                                            </div>
+
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                    </div>
+                    </div>
+
+                </section>
+            {% endblock %}

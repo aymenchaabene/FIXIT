@@ -1,0 +1,50 @@
+<div class="container py-xl-5 py-lg-3">
+    <div class="title-bg text-center py-5 mb-5">
+        <h3 class="tittle text-wh let mb-2 pt-lg-3">Voulez-vous ajouter une annonce?</h3>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+                <h2 class="mb-5" style="color: #0998b0; font-family: cursive; ">{% trans %}Ajouter Votre Annonce :{% endtrans %}</h2>
+
+                {% form_theme form 'bootstrap_4_layout.html.twig' %}
+                {{ form_start(form) }}
+                <div class="form-group">
+                    <label >{% trans %}Type:{% endtrans %}<i style="color:#B22222;"> * </i></label>
+
+                    {{ form_widget(form.budget, {'attr': {'class': 'form-control','placeholder':'type', 'style':'height:80%'} }) }}</br>
+                </div>
+                <div style="width: 5px;height: 40px"></div>
+
+                <div style="width: 5px;height: 40px"></div>
+
+                <div style="width: 50px;height: 40px"></div>
+
+
+
+
+
+                <div class="form-group">
+                    <label>{% trans %}Adresse: {% endtrans %}<i style="color:#B22222;"> * </i></label>
+                    {{ form_widget(form.titre,{'attr': {'class': 'form-control', 'placeholder':'Adresse...', 'style':'height:80%'}}) }}</br>
+                </div>
+
+                <div style="width: 5px;height: 40px"></div>
+                <div class="form-group" style="padding-right: 20%">
+                    <label>{% trans %}Photo: {% endtrans %}<i style="color:#B22222;"> * </i></label>
+                    {{ form_widget(form.photo,{'attr': {'class': 'form-control','style':'height:80px;width:700px',  }}) }}</br>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Ajouter" class=" btn btn-info">
+                </div>
+
+
+
+                {{ form_end(form) }}
+                {% form_theme form 'bootstrap_4_horizontal_layout.html.twig' %}
+            </div>
+        </div>
+
+
+    </div>
+</div>

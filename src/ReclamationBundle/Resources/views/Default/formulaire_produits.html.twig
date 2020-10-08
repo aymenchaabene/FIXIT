@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <meta charset=utf-8>
+    <meta name=description content="">
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property=og:image content="path/to/image.html">
+    <!--Favicon-->
+    <link rel=icon href="{{ asset('img/favicon/favicon.ico') }}">
+    <!--Libs css-->
+    <link rel=stylesheet href="{{ asset('css/A.libs.css.pagespeed.cf.XBxUqWFizV.css')}}">
+    <!--Main css-->
+    <link rel=stylesheet data-style=styles href="{{ asset('css/A.main.min.css.pagespeed.cf.tj79wdIVX8.css')}}">
+    <link rel=stylesheet href="{{ asset('libs/style-customizer/A.style-customizer.css.pagespeed.cf._Eu7UPcYKE.css')}}">
+
+
+
+
+    <section class=contact-form>
+
+        <div class=container>
+
+            <div class=row>
+                <div class="col-md-8 col-md-push-2">
+                    <div class="heading-title small-heading center">
+                        <h2>Contact with us <span> {{ app.user.username }}</span></h2>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class=row>
+                <div class=col-md-12 >
+                    <form method="POST" >
+                        <div class="contact-form-sub contact-form-white" >
+                            <input type=text name=Nom required pattern="[0-9a-zA-Z-\.]{3,12}" placeholder='Nom :De 3 a 12 caracteres'>
+                            <input type=text name=Prenom required pattern="[0-9a-zA-Z-\.]{3,12}" placeholder="Prenom : de 3 a 12 caracteres">
+                            <input type=text required pattern="[0-9-\.]{8,12}"  name=Num placeholder=Num>
+                            <input type=email name=Email placeholder=Email>
+                            <input type=text required pattern="[0-9a-zA-Z-\.]{3,50}" name=Description placeholder=Description>
+                            <input type=submit value="Envoyer" class=btn>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{{ asset('js/libs.js.pagespeed.ce.DOwYpPUZ49.js') }}"></script>
+
+    <!--Use scripts-->
+    <script src="{{ asset('js/common.js.pagespeed.ce.DM-As05-vb.js') }}"></script>
+
+{% endblock %}

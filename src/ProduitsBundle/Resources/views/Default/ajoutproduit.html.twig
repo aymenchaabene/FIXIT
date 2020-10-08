@@ -1,0 +1,78 @@
+{% extends 'baseBack.html.twig' %}
+{% block content %}
+    <form method="post" novalidate="novalidate" enctype="multipart/form-data">
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-label-group">
+                        <input type="text" id="Nom" name="nom" class="form-control" placeholder="Nom" required="required" autofocus="autofocus">
+                        <label for="Nom">Nom</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-label-group">
+                        <input type="text" id="reference" name="reference" class="form-control" placeholder="Reference" required="required">
+                        <label for="reference">Reference</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-label-group">
+                        <input type="text" id="categorie" name="categorie" class="form-control" placeholder="categorie" required="required" autofocus="autofocus">
+                        <label for="categorie">Categorie</label>
+                    <!--<select></select>-->
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-label-group">
+                        <input type="number" id="quantite" name="quantite" class="form-control" value="1" required="required">
+                        <label for="quantite">Quantite</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-label-group">
+                        <input type="number" id="prix" name="prix" class="form-control" value="1"  required="required" autofocus="autofocus">
+                        <label for="prix">Prix</label>
+                        <!--<select></select>-->
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-label-group">
+                        <input type="text" id="description" name="description" class="form-control" placeholder="description" required="required">
+                        <label for="description">Description</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-label-group">
+                        <select id="fournisseur" style="width:100%" class="form-control custom-select" name="fournisseur" data-rule-required="true">
+                            {% for f in fournisseurs %}
+                                <option value="{{ f.id }}">{{ f.nom }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-label-group">
+                        <input id="logo" type="file" name="image" data-buttontext="Choose image" data-buttonname="btn-outline btn-primary" data-iconname="ti-image" data-rule-accept="image/*" class="filestyle">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" href="login.html">Ajouter le produit</button>
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,72 @@
+reclamation_homepage1:
+    path:     /rec
+    defaults: { _controller: ReclamationBundle:Default:indexx }
+
+envoi_reclamation :
+    path:     /envoi_reclamation{idprestatire}
+    defaults: { _controller: ReclamationBundle:Default:rec }
+
+liste :
+    path:     /liste
+    defaults: { _controller: ReclamationBundle:Default:liste }
+
+ReclamationAdmin :
+    path:     /ReclamationAdmin
+    defaults: { _controller: ReclamationBundle:Default:ReclamationAdmin }
+
+inverse :
+    path:     /inverse/{idreclamation}
+    defaults: { _controller: ReclamationBundle:Default:inverse }
+
+envoyer_mail :
+    path:     /envoi/{idreclamation}
+    defaults: { _controller: ReclamationBundle:Default:envoi }
+
+supprimer_reclamation :
+    path:     /supp/{idreclamation}
+    defaults: { _controller: ReclamationBundle:Default:suppAdmin }
+
+modi :
+    path:     /modi/{idReclamationPrestation}
+    defaults: { _controller: ReclamationBundle:Default:modi}
+
+
+RecProduits:
+    path:     /RecProduits
+    defaults: { _controller: ReclamationBundle:Default:RecProduits }
+
+reclamation_Produit:
+    path:     /reclamation_Produit/{idproduit}
+    defaults: { _controller: ReclamationBundle:Default:reclamationProduit }
+
+liste_rec_prod:
+    path:     /liste_rec_prod
+    defaults: { _controller: ReclamationBundle:Default:liste_rec_prod }
+
+modi1 :
+    path:     /modi1/{nomprduit}/{idReclamationProduit}
+    defaults: { _controller: ReclamationBundle:Default:modi1}
+
+ReclamationProduitAdmin :
+    path:     /ReclamationProduitAdmin
+    defaults: { _controller: ReclamationBundle:Default:ReclamationProduitAdmin }
+
+inverse1 :
+    path:     /inverse1/{idreclamation1}
+    defaults: { _controller: ReclamationBundle:Default:inverse1 }
+
+envoyer_mail1 :
+    path:     /envoi1/{idreclamation1}
+    defaults: { _controller: ReclamationBundle:Default:envoi1 }
+
+supprimer_reclamation1 :
+    path:     /supp1/{idreclamation1}
+    defaults: { _controller: ReclamationBundle:Default:suppAdmin1 }
+
+trai :
+    path:     /trai/{idreclamation1}
+    defaults: { _controller: ReclamationBundle:Default:trai }
+
+trai1 :
+    path:     /trai1/{idreclamation}
+    defaults: { _controller: ReclamationBundle:Default:trai1 }

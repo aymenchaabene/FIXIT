@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="sub-head">{{ 'resetting.request.submit'|trans({}, 'FOSUserBundle') }}</h2>
+                </div>
+                <div class="panel-body">
+                    <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+                        <div>
+                            {% if invalid_username is defined %}
+                                <p>{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}, 'FOSUserBundle') }}</p>
+                            {% endif %}
+                            <div class="icon1">
+                              <i class="fa fa-user" aria-hidden="true"></i>
+                              <input type="text" id="username" placeholder="{{ 'resetting.request.username'|trans({}, 'FOSUserBundle') }}" name="_username" required="required" autofocus/>
+                            </div>
+                            <div class="bottom">
+                              <input type="submit" value="{{ 'resetting.request.submit'|trans({}, 'FOSUserBundle') }}" style="width: 100%;"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

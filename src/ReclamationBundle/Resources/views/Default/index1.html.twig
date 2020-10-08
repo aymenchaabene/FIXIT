@@ -1,0 +1,157 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <meta name=description content="">
+    <meta name="google-site-verification" content="TrETcXa4H7rYq3jtb-kakV0qKwvJPEVmM9JqWare91w" />
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property=og:image content="path/to/image.html">
+    <!--Favicon-->
+    <link rel=icon href="{{ asset('img/favicon/favicon.ico') }}">
+    <!--Libs css-->
+    <link rel=stylesheet href="{{ asset('css/A.libs.css.pagespeed.cf.XBxUqWFizV.css')}}">
+    <!--Main css-->
+    <link rel=stylesheet data-style=styles href="{{ asset('css/A.main.min.css.pagespeed.cf.tj79wdIVX8.css')}}">
+    <link rel=stylesheet href="{{ asset('libs/style-customizer/A.style-customizer.css.pagespeed.cf._Eu7UPcYKE.css')}}">
+    <style>
+        #map{
+            height:400px;
+            width:100%;
+        }
+    </style>
+    <style type="text/css">
+
+        hr {
+            width: 100%;
+            height: 1px;
+            background-color: black;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-width: 2px;
+
+        }
+
+    </style>
+
+    <section class=faq-section>
+        <div class=container>
+            <div class=row>
+                <div class=col-md-12>
+
+                    {% if 'ROLE_PRESTATAIRE' in app.user.roles %}
+
+                        <section data-image="img/bg2.jpg" class="section-how-we-work bg-white-section background-image">
+                            <div class=container>
+                                <div class=row>
+                                    <div class="col-md-8 col-md-push-2">
+                                        <div class="heading-title center">
+                                            <h2>Liste Des Reclamation</h2>
+                                            <div class=small-desd>Liste des <span>Reclamations</span></div>
+                                            <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% for i in up %}
+                                <div class=row>
+                                    <!-- Item-->
+                                    <div class="col-md-3 col-sm-6 col-xs-12 item-icon">
+                                        <div class=icon-container>
+                                            <div class="icon icon-circle"><i class=pe-7s-look></i></div>
+                                        </div>
+                                        <h3>Nom et Prenom</h3>
+                                        <p>{{ i.nom }} {{ i.prenom }}</p>
+                                    </div>
+                                    <!-- Item-->
+                                    <div class="col-md-3 col-sm-6 col-xs-12 item-icon">
+                                        <div class=icon-container>
+                                            <div class="icon icon-circle"><i class=pe-7s-light></i></div>
+                                        </div>
+                                        <h3>Telephone</h3>
+                                        <p>{{ i.num }}</p>
+                                    </div>
+                                    <!-- Item-->
+                                    <div class="col-md-3 col-sm-6 col-xs-12 item-icon">
+                                        <div class=icon-container>
+                                            <div class="icon icon-circle"><i class=pe-7s-like2></i></div>
+                                        </div>
+                                        <h3>Description</h3>
+                                        <p>{{ i.description }}</p>
+                                    </div>
+                                    <!-- Item-->
+                                    <div class="col-md-3 col-sm-6 col-xs-12 item-icon">
+                                        <div class=icon-container>
+                                            <div class="icon icon-circle"><i class=pe-7s-graph1></i></div>
+                                        </div>
+                                        <h3>Email</h3>
+                                        <p>{{ i.eMail }}</p>
+                                    </div>
+                                    <!-- Edn items-->
+                                </div>
+                                    <br>
+                                {% endfor %}
+                            </div>
+                        </section>
+                    {% else %}
+                        <h3 > <i class="fa fa-clock-o"></i> <a href="{{ path('liste') }}">Liste des Reclamations envoyee </a></h3>
+                        <div>
+
+                        </div>
+                        {% for i in formation %}
+
+                            <a href=""><h2 class=acc-head > Prestation numero : {{ i.idPrestation }}  </h2></a>
+                            <div class=accordion>
+                                <!--tab-->
+                                <h3><i class="fa fa-heart"></i>Description</h3>
+                                <div>
+
+                                    <p>{{ i.idDemande }}</p>
+                                </div>
+                                <!--tab-->
+                                <h3><i class="fa fa-clock-o"></i>Date de Prestation</h3>
+                                <div>
+                                    <p>{{ i.dateRdv|date }}</p>
+                                </div>
+                                <!--tab-->
+                                <h3><i class="fa fa-codepen"></i>Prix de prestation</h3>
+                                <div>
+                                    <p>{{ i.idUser }} dinar</p>
+
+                                </div>
+
+                                <h3><i class="fa fa-group"></i>Envoyer une reclamation</h3>
+                                <div>
+                                    <a href="{{ path('envoi_reclamation', { 'idprestatire': i.idPrestataire  }) }}">Reclamation </a>
+                                    <br>
+                                    <div class="fb-like" data-href="https://www.facebook.com/Fixit-283631265900307/ " data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                                    <div class="navigation"></div>
+                                    <div id="fb-root"></div>
+                                    <script>(function(d, s, id) {
+                                            var js, fjs = d.getElementsByTagName(s)[0];
+                                            if (d.getElementById(id)) return;
+                                            js = d.createElement(s); js.id = id;
+                                            js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.12';
+                                            fjs.parentNode.insertBefore(js, fjs);
+                                        }(document, 'script', 'facebook-jssdk'));</script>
+                                </div>
+
+                            </div>
+
+
+                        {% endfor %}
+{% endif %}
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <div class="top icon-down toTopFromBottom"><a href="#top" class=smooth-scroll><i class=pe-7s-angle-up></i></a></div>
+    <!--end button to top-->
+    <!--Google map-->
+
+    <!--Libs-->
+    <script src="{{ asset('js/libs.js.pagespeed.ce.DOwYpPUZ49.js') }}"></script>
+
+    <!--Use scripts-->
+    <script src="{{ asset('js/common.js.pagespeed.ce.DM-As05-vb.js') }}"></script>
+{% endblock %}

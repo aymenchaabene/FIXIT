@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="sub-head">{{ 'resetting.reset.submit'|trans({}, 'FOSUserBundle') }}</h2>
+                </div>
+                <div class="panel-body">
+                    <form action="{{ path('fos_user_resetting_reset', {'token': token}) }}" method="POST" class="fos_user_resetting_reset">
+                        {{ form_widget(form._token) }}
+                        <div class="icon1">
+                          <i class="fa fa-user" aria-hidden="true"></i>
+                          {{ form_widget(form.username) }}
+                        </div>
+                        <div>
+                            <input type="submit" class="btn btn-lg btn-success btn-block" value="{{ 'resetting.reset.submit'|trans({}, 'FOSUserBundle') }}" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}UserBundle:Security:redirect{% endblock %}
+
+
+{% block body %}
+    <h1>Welcome to the admin home</h1>
+    <a href="{{ path('fos_user_security_logout') }}">Sign out</a>
+{% endblock %}

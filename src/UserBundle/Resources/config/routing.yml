@@ -1,0 +1,15 @@
+user_homepage:
+    path:     /
+    defaults: { _controller: UserBundle:Default:index }
+
+client_homepage:
+    path:     /client
+    defaults: { _controller: UserBundle:Default:client }
+
+admin_homepage:
+    path:     /admin
+    defaults: { _controller: UserBundle:Default:admin }
+
+prestataire_homepage:
+    path:     /prestataire
+    defaults: { _controller: UserBundle:Default:pres }

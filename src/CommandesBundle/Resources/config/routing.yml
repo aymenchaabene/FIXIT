@@ -1,0 +1,6 @@
+commandes_homepage:
+    path:     /
+    defaults: { _controller: CommandesBundle:Default:index }
+Panier:
+    path:     /Panier
+    defaults: { _controller: CommandesBundle:Default:index }

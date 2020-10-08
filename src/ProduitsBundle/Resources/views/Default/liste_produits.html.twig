@@ -1,0 +1,59 @@
+{% extends 'baseBack.html.twig' %}
+{% block content %}
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Data Table Example</div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Reference</th>
+                        <th>Categorie</th>
+                        <th>Quantiite</th>
+                        <th>Prix</th>
+                        <th>Image</th>
+                        <th>Description</th>
+                        <th>Fournisseur</th>
+                        <th>Etoiles</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Reference</th>
+                        <th>Categorie</th>
+                        <th>Quantiite</th>
+                        <th>Prix</th>
+                        <th>Image</th>
+                        <th>Description</th>
+                        <th>Fournisseur</th>
+                        <th>Etoiles</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    {% for i in produits %}
+                    <tr>
+                        <td>{{  i.idProduit }}</td>
+                        <td>{{  i.nom }}</td>
+                        <td>{{  i.reference }}</td>
+                        <td>{{  i.categorie }}</td>
+                        <td>{{  i.quantite }}</td>
+                        <td>{{  i.prix}}</td>
+                        <td>{{  i.image}}</td>
+                        <td>{{  i.description }}</td>
+                        <td>{{  i.fournisseurId.nom }}</td>
+                        <td>{{  i.etoile }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+{% endblock %}

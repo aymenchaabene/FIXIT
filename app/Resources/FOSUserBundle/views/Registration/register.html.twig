@@ -1,0 +1,69 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+
+{% block fos_user_content  %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700">
+    <link rel="stylesheet" href="{{asset('Bundles/AppBundle/fonts/icomoon/style.css')}}">
+
+    <link rel="stylesheet" href="{{asset('Bundles/AppBundle/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('Bundles/AppBundle/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('Bundles/AppBundle/css/jquery-ui.css')}}">
+    <link rel="stylesheet" href="{{asset('Bundles/AppBundle/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('Bundles/AppBundle/css/owl.theme.default.min.css')}}">
+
+    <link rel="stylesheet" href="{{asset('Bundles/AppBundle/css/bootstrap-datepicker.css')}}">
+
+    <link rel="stylesheet" href="{{asset('Bundles/AppBundle/fonts/flaticon/font/flaticon.css')}}">
+
+
+
+    <link rel="stylesheet" href="{{asset('Bundles/AppBundle/css/aos.css')}}">
+
+    <link rel="stylesheet" href="{{asset('Bundles/AppBundle/css/style.css')}}">
+    <form style="background-color: #fdfdfe" class="form-login"  class="form-login" action="" method="post">
+        <h2 style="background-color: #ffcc00" s class="form-login-heading">Se connecter</h2>
+        <div class="login-wrap">
+            {% include "@FOSUser/Registration/register_content.html.twig" %}
+        </div>
+    </form>
+
+
+{% endblock fos_user_content %}
+
+
+{% block javascripts %}
+{{ parent() }}
+<script>
+    $('#fos_user_registration_form_roles_0').on('change', function (){
+		
+        if ($(this).val() == 'ROLE_CLIENT') {
+            $('#type').removeClass('hidden');
+            $('#description').removeClass('hidden');
+        } else {
+            $('#type').addClass('hidden');
+            $('#description').addClass('hidden');
+        }
+        if ($(this).val() == 'ROLE_PRESTATIRE') {
+            $('#').removeClass('hidden');
+
+        } else {
+            $('#').addClass('hidden');
+
+
+        }
+        if ($(this).val() == 'ROLE_ADMIN') {
+            $('#guide').removeClass('hidden');
+
+        } else {
+            $('#guide').addClass('hidden');
+
+        }
+
+
+    });
+</script>
+{% endblock  %}
+
+
+
+

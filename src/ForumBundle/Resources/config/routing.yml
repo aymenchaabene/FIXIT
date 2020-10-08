@@ -1,0 +1,8 @@
+forum_homepage:
+    path:     /
+    defaults: { _controller: ForumBundle:Default:index }
+
+
+Blog:
+    path:     /Blog
+    defaults: { _controller: ForumBundle:Default:index }

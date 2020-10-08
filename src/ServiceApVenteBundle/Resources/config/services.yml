@@ -1,0 +1,4 @@
+services:
+#    service_ap_vente.example:
+#        class: ServiceApVenteBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

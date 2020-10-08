@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+    <!--Libs css-->
+    <link rel=stylesheet href="{{ asset('css/A.libs.css.pagespeed.cf.XBxUqWFizV.css')}}">
+<!--Main css-->
+<link rel=stylesheet data-style=styles href="{{ asset('css/A.main.min.css.pagespeed.cf.tj79wdIVX8.css')}}">
+
+
+<section class=contact-form>
+    <div class=container>
+        <div class=row>
+            <div class="col-md-8 col-md-push-2">
+                <div class="heading-title small-heading center">
+                    <h2>Contact <span>with us</span></h2>
+
+                </div>
+            </div>
+        </div>
+        <div >
+            <form   method="post">
+                <div class=col-md-6>
+                    <div class="contact-form-sub contact-form-white">
+                        <input type=text name=Nom required pattern="[0-9a-zA-Z-\.]{3,12}" placeholder=Nom>
+                        <input type=text name=Num required pattern="[0-9-\.]{8,12}" placeholder="Num">
+                        <input type=email name=Email placeholder=Email>
+                        <input type=text name=Prenom required pattern="[0-9a-zA-Z-\.]{3,12}" placeholder=Prenom>
+
+                    </div>
+                </div>
+                <div class=col-md-6>
+                    <div class="contact-form-sub contact-form-white">
+                        <textarea name=Contenu_contact placeholder="Message *" required cols=3 rows=5></textarea>
+                        <p class="success-msg hidden notify">Your message has been send</p>
+                        <p class="error-msg hidden notify">Error sending message</p>
+                        <input type=submit value="Send message" class=btn>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

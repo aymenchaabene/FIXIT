@@ -1,0 +1,106 @@
+
+{% extends 'base.html.twig' %}
+{% block body %}
+    <meta charset=utf-8>
+    <title>KANTER - Creative Digital Agency Template</title>
+    <meta name=description content="">
+    <meta name="google-site-verification" content="TrETcXa4H7rYq3jtb-kakV0qKwvJPEVmM9JqWare91w" />
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property=og:image content="path/to/image.html">
+    <!--Favicon-->
+    <link rel=icon href="{{ asset('img/favicon/favicon.ico') }}">
+    <!--Libs css-->
+    <link rel=stylesheet href="{{ asset('css/A.libs.css.pagespeed.cf.XBxUqWFizV.css')}}">
+    <!--Main css-->
+    <link rel=stylesheet data-style=styles href="{{ asset('css/A.main.min.css.pagespeed.cf.tj79wdIVX8.css')}}">
+    <link rel=stylesheet href="{{ asset('libs/style-customizer/A.style-customizer.css.pagespeed.cf._Eu7UPcYKE.css')}}">
+
+
+    <section data-image="img/bg2.jpg" id=top class="display-page bg-dark-section background-image">
+        <div class=container>
+            <div class=row>
+                <div class=col-md-12>
+                    <div class=content>
+                        <!-- heading title-->
+
+                            <h1>Liste des <span> Reclamations</span></h1>
+
+
+
+
+                        <!-- horizontal line--><span class=horizontal-line></span><span></span>
+                        <!-- description slider-->
+                        <div class=description>
+                            <p>We like to create a good and high-quality products. <br>We love clients who appreciate the value of our work, and who are willing to invest in themselves.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class=faq-section>
+    <div class=container>
+    <div class=row>
+    <div class=col-md-12>
+    {% for j in formation %}
+        <section data-image="{{ asset('img/bg3.jpg') }}" class="chooce-us-acc bg-white-section white-70 background-image">
+
+                    <div class=container>
+                        <div class=row>
+                            <div class=col-md-6>
+                                <div class="heading-title small-heading text-left">
+                                    <h2>{{ j.nomProduit }}  <span></span></h2>
+                                    <p>{{ j.description }}</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class=col-md-6>
+                                <div class=accordion>
+                                    <!--tab-->
+                                    <h3> <i class="fa fa-group"></i>Nom et prenom</h3>
+                                    <div>
+                                        <p>{{ j.nom }} {{ j.prenom }}  </p>
+                                        <p> </p>
+                                    </div>
+                                    <!--tab-->
+                                    <h3> <i class="fa fa-clock-o"></i>Email</h3>
+                                    <div>
+                                        <p>{{ j.eMail }}</p>
+                                    </div>
+                                    <!--tab-->
+                                    <h3><i class="fa fa-heart"></i>Telephone</h3>
+                                    <div>
+                                        <p> Num : {{ j.num }}</p>
+                                    </div>
+                                    <!--tab-->
+                                    <h3> <i class="fa fa-codepen"></i>Etat</h3>
+                                    <div class=buttons-section>
+                                        {% if j.etat == 1 %}
+                                            <a> Reclamation en cours </a>
+                                        {% elseif j.etat == 0 %}
+
+                                            <a href="{{ path('modi1', {'nomprduit': j.nomProduit ,'idReclamationProduit':j.idReclamationProduit }) }}">Reclamation en attente </a>
+
+                                        {% else %}
+                                            <p>Reclamation traité</p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+    {% endfor %}
+    </div>
+    </div>
+    </div>
+    </section>
+    <script src="{{ asset('js/libs.js.pagespeed.ce.DOwYpPUZ49.js') }}"></script>
+
+    <!--Use scripts-->
+    <script src="{{ asset('js/common.js.pagespeed.ce.DM-As05-vb.js') }}"></script>
+{% endblock %}

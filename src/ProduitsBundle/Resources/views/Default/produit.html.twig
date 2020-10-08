@@ -1,0 +1,33 @@
+{% extends 'baseBack.html.twig' %}
+{% block content %}
+    <div align="center">
+        <div class="col-md-12">
+            <br><h2 class="section-title text-center">Créer un Contrat</h2>
+            <form method="post" class="ajout-form">
+
+                <div class="col-md-4">Nom du contrat:<input type="text" name="nom"></br><br></div>
+                <div class="col-md-4">Description:<input type="text" name="description" ></br><br></div>
+                <div class="col-md-4"> Cin de l'assure:<input type="text" name="cin_assure" > </br><br></div>
+                <div class="col-md-4">  Nom Entreprise<input type="text" name="nomEntr" ></br><br></div>
+                <div class="col-md-4">  ID Type<input type="text" name="id_type" ></br><br></div>
+                <div class="col-md-4"> <select name="type">
+                        <option value="vehicule">Vehicule</option>
+                        <option value="voyage">Voyage</option>
+                        <option value="habitation">Habitation</option>
+                    </select></br><br></div>
+                <div class="col-md-4">Date Debut<input type="date" name="date_debut"></br><br></div>
+                <div class="col-md-4"> Date Echeance<input type="date" name="date_echeance"></br><br></div>
+                <div class="col-md-4">Etat <select name="etat">
+
+                        <option selected value="0">Non paye</option>
+                    </select></br><br></div>
+                <div class="col-md-4">Prime:<input type="text" name="prime" ></br><br></div>
+
+                <div class="col-md-4"><input type="submit" value="Créer le Contrat"><br><br><br></div>
+
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'baseBack.html.twig' %}
+{% block content %}
+
+
+    <!-- theme style -->
+    <link rel="stylesheet" href="{{ asset('FixitDesign/css/master_style.css')}}">
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Liste des Reclamations</h3>
+
+                    <div class="box-tools">
+                        <div class="input-group input-group-sm" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <tr>
+                                <th>Description de la Reclamation</th>
+                                <th>Nom prestataire</th>
+                                <th>Email</th>
+                                <th>Telephone</th>
+                                <th>Etat de la reclamation</th>
+                                <th>Actions</th>
+                            </tr>
+                            {% for event in et %}
+                                <tr>
+                                    <td><a href="">{{  event.description}}</a></td>
+                                    <td>{{ event.nomPrestataire  }}</td>
+                                    <td><span class="text-muted"><i class="fa fa-clock-o"></i> {{ event.eMail}}</span> </td>
+                                    <td><span class="text-muted"><i class="fa fa-clock-o"></i> {{ event.num}}</span> </td>
+                                    {% if event.etat == 0 %}
+                                        <td><span class="label label-success">{{ event.etat }} : en attente</span></td>
+                                    {% elseif event.etat == 1 %}
+                                        <td><span class="label label-danger">{{ event.etat }} : en cours</span></td>
+                                        {% else %}
+                                            <td><span class="label label-primary">{{ event.etat }} : traite</span></td>
+                                    {% endif %}
+                                    <td>
+                                        {% if event.etat == 0 %}
+                                            <span class="label label-warning"> <a href="{{ path('envoyer_mail', {'idreclamation': event.idReclamationPrestation}) }}">En cours</a> </span>,
+
+                                            <span class="label label-success"> <a href="{{ path('supprimer_reclamation', {'idreclamation': event.idReclamationPrestation}) }}">Supprimer</a> </span>
+
+                                        {% elseif event.etat == 1 %}
+                                            <span class="label label-success"> <a href="{{ path('trai1', {'idreclamation': event.idReclamationPrestation}) }}"> traiter</a> </span> ,
+                                            <span class="label label-danger"> <a href="{{ path('inverse', {'idreclamation': event.idReclamationPrestation}) }}"> Annuler</a> </span>
+                                            {% else %}
+
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+                <div class="navigation">
+
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+
+
+{% endblock %}

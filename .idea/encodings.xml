@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/Resources/FOSUserBundle" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/DemandeOffreBundle/Entity/Demande.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/DemandeOffreBundle/Entity/Offre.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ReclamationBundle/Resources/views/Default/Admin_reclamation.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ReclamationBundle/Resources/views/Default/mail.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/ReclamationBundle/Resources/views/Default/update.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/UserBundle/Form" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/UserBundle/Resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/FixitDesign" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/img" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/libs" charset="UTF-8" />
+    <file url="PROJECT" charset="windows-1252" />
+  </component>
+</project>

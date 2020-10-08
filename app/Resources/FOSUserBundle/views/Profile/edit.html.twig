@@ -1,0 +1,49 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block header %}
+
+
+    <div class="banner_w3lspvt">
+        <!-- nav -->
+        <div class="nav_w3ls pt-4 pb-3 text-center">
+            <nav>
+                <label for="drop" class="toggle">Menu</label>
+                <input type="checkbox" id="drop"/>
+                <ul class="menu">
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="">Programmes</a></li>
+                    <li>
+                        <!-- First Tier Drop Down -->
+                        <label for="drop-2" class="toggle toogle-2">Evenement<span class="fa fa-angle-down"
+                                                                                   aria-hidden="true"></span>
+                        </label>
+                        <a href="#">Evenements<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                        <input type="checkbox" id="drop-2"/>
+                        <ul class="text-left">
+                            <li><a href="#about" class="drop-text">Voyage</a></li>
+                            <li><a href="#what" class="drop-text">Randonnée</a></li>
+                            <li><a href="#blog" class="drop-text">Excursion</a></li>
+                            <li><a href="single.html" class="drop-text">Camping</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gallery.html">Galerie</a></li>
+                    <li><a href="#">Produit</a></li>
+                    <li><a href="#">Guide</a></li>
+                    <li><a href="#">Annonce</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- //nav -->
+        <div class="banner-text text-right">
+            {% block fos_user_content %}
+                {% include "@FOSUser/Profile/edit_content.html.twig" %}
+            {% endblock fos_user_content %}
+        </div>
+    </div>
+
+
+
+
+    {% endblock %}
+
+

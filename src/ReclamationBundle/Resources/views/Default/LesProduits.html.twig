@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <meta charset=utf-8>
+    <title>KANTER - Creative Digital Agency Template</title>
+    <meta name=description content="">
+    <meta name="google-site-verification" content="TrETcXa4H7rYq3jtb-kakV0qKwvJPEVmM9JqWare91w" />
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property=og:image content="path/to/image.html">
+    <!--Favicon-->
+    <link rel=icon href="{{ asset('img/favicon/favicon.ico') }}">
+    <!--Libs css-->
+    <link rel=stylesheet href="{{ asset('css/A.libs.css.pagespeed.cf.XBxUqWFizV.css')}}">
+    <!--Main css-->
+    <link rel=stylesheet data-style=styles href="{{ asset('css/A.main.min.css.pagespeed.cf.tj79wdIVX8.css')}}">
+    <link rel=stylesheet href="{{ asset('libs/style-customizer/A.style-customizer.css.pagespeed.cf._Eu7UPcYKE.css')}}">
+    <style>
+        #map{
+            height:400px;
+            width:100%;
+        }
+    </style>
+    <section id=services class="section-our-services bg-white-section two-col">
+
+        <div class=container>
+            {% if 'ROLE_PRESTATAIRE' in app.user.roles %}
+            {% else %}
+            <a href="{{ path('liste_rec_prod') }}">Liste des reclamation </a>
+            <div class=row>
+                <div class="col-md-8 col-md-push-2">
+                    <div class="heading-title center">
+                        <h2>Liste des  <span>Produits</span></h2>
+                        <div class=small-desd>We create <span>awesome stuff</span></div>
+                        <p>The combination of beautiful and clean design, technology and user experience, give us big advantage in the market and differentiates our work.</p>
+                    </div>
+                </div>
+            </div>
+            <div class=row>
+                {% for forma in formation %}
+                <div class=col-md-6>
+                    <div class=item-service>
+                        <div style="width: 500px" data-image="img/bg1.jpg" class="icon-service bg-mask background-image">
+                            <div class=small-i><i class=pe-7s-global></i></div>
+                            <div class=large-i><i class=pe-7s-global></i></div>
+                        </div>
+                        <div class=content-service>
+                            <h2> {{  forma.nom}} <span> Prix : {{ forma.prix }}</span></h2>
+                            {% set rat=0 %}
+                            {% set nb=0 %}
+
+                            {% for ra in rating1 %}
+
+                                {% if ra.idProduit==forma.idProduit %}
+                                    {% set rat=rat+ra.etoile %}
+
+                                {% endif %}
+                            {% endfor %}
+                            {% if rat>0 %}
+                                {% set x=rat  %}
+                                {{ x|rating }}
+                            {% else %}
+                                {{ rat|rating }}
+                            {% endif %}
+                            <p>{{forma.description}}</p>
+                            <hr>
+                            <div class="buttons-section left"><a href="{{ path('reclamation_Produit' , {'idproduit': forma.idProduit}) }}" class="btn white-btn">Reclamation</a></div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+
+{% endblock %}

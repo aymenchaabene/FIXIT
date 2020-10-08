@@ -1,0 +1,3 @@
+service_ap_vente_homepage:
+    path:     /
+    defaults: { _controller: ServiceApVenteBundle:Default:index }

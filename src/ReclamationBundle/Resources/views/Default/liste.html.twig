@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <link rel=icon href="{{ asset('img/favicon/favicon.ico') }}">
+    <!--Libs css-->
+    <link rel=stylesheet href="{{ asset('css/A.libs.css.pagespeed.cf.XBxUqWFizV.css')}}">
+    <!--Main css-->
+    <link rel=stylesheet data-style=styles href="{{ asset('css/A.main.min.css.pagespeed.cf.tj79wdIVX8.css')}}">
+    <link rel=stylesheet href="{{ asset('libs/style-customizer/A.style-customizer.css.pagespeed.cf._Eu7UPcYKE.css')}}">
+    <section data-image="img/bgn11.jpg" id=top class="display-page img-parallax bg-mask background-image">
+        <div class=container>
+            <div class=row>
+                <div class=col-md-12>
+                    <div class=content>
+                        <!-- heading title-->
+                        <h1>Liste des  <span>Reclamations</span></h1>
+                        <!-- horizontal line--><span class=horizontal-line></span><span></span>
+                        <!-- description slider-->
+                        <div class=description>
+                            <p> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class=bg-white-section>
+
+        <div class=container>
+            <input id="recherche" type=text required="" name=Event placeholder=" Recherche" class=form-control>
+            <br>
+            <div >
+                <div class="forums-table" id="tableau">
+                    {% for i in liste %}
+                        <div class=item-price-two>
+                            {% if i.etat == 0 %} <a style="color: #2ecc71" href={{ path('modi', {'idReclamationPrestation': i.idReclamationPrestation}) }} >
+                                <h2>{{ i.description }}
+                                    (en attente)
+
+                                </h2></a>
+                            {% elseif  i.etat == 1 %}
+
+                                <h2 style="color: red">{{ i.description }}
+                                    (en cours)
+
+                                </h2>
+                            {% else %}
+                                <h2 style="color: black">{{ i.description }}
+                                    (traite)
+
+                                </h2>
+                            {% endif %}
+
+                            <div class=price><span>Num Tel:</span>
+                                <h2>{{ i.num  }}</h2>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                </div>
+                <br>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+    <script >
+        $(function () {
+            $("#recherche").keyup(function () {
+                $.ajax({
+
+                    url : "{{ path('liste') }}",
+                    data : { 'Event':$(this).val() }
+                }).done(function (response) {
+
+                    var tableau = $(response).find(".forums-table");
+                    $('#tableau').empty();
+                    $('#tableau').append(tableau);
+                });
+            });
+        })
+    </script>
+{% endblock %}
